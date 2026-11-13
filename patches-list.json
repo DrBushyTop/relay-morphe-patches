@@ -1,10 +1,55 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.4.0",
+  "version": "1.5.0-dev.1",
   "patches": [
     {
       "name": "Fix GIF sound",
-      "description": "Plays GIF videos from the site that hosts them, with sound, instead of Reddit's silent copy. When the original has been removed, Reddit's copy plays as before.",
+      "description": "Plays GIF videos from the site that hosts them, with sound, instead of Reddit's silent copy. When the original can't be loaded, Reddit's copy plays as before.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "free.reddit.news",
+          "name": "Relay for Reddit",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "packageName": "reddit.news",
+          "name": "Relay for Reddit Pro",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Fix video crashes",
+      "description": "Stops Relay from crashing on a post whose video has no URL (when the post's More menu opens, for one) and when the video controls button is tapped before a video loads.",
       "default": true,
       "category": null,
       "compatiblePackages": [
