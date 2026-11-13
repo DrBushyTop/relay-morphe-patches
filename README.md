@@ -37,8 +37,12 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   Android 13 or later.
 - **Fix GIF sound**: For some GIF hosts, Relay asks the host for the video only when its remote config
   says so. Patcheddit turns remote config off, so Relay played Reddit's own copy of the clip, which has no
-  sound. It now loads the original, with sound when the clip has it. When the original has been removed,
-  Reddit's silent copy plays as before.
+  sound. It now loads the original, with sound when the clip has it (Relay's "Mute videos" setting still
+  starts it muted). The host's API no longer gives Relay's own API key the video files, so the patch uses
+  the anonymous access the host's website uses. When the original can't be loaded (removed, or the host is
+  down), Reddit's silent copy plays as before.
+- **Fix video crashes**: Relay crashed on a post whose video has no URL (opening the post's More menu,
+  for one), and when the video controls button was tapped before a video loaded.
 
 Supported: Relay for Reddit 10.2.40 (`free.reddit.news`, the version patcheddit requires) and Relay Pro
 10.2.40 (`reddit.news`). Only the free version is tested.
