@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.2.0...v1.3.0) (2026-11-13)
+
+### ✨ New Features
+
+* Night theme like OLED that turns dark grey in dim light ([2452e6a](https://github.com/DrBushyTop/relay-morphe-patches/commit/2452e6a405b875318dbaeef7897d66b674815a2a))
+
 ## [1.3.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.2.0...v1.3.0-dev.1) (2026-11-13)
 
 ### ✨ New Features
