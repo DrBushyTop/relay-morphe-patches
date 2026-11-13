@@ -2,10 +2,12 @@ package app.drbushytop.patches.relay.media
 
 import app.drbushytop.patches.relay.Relay
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.util.smali.ExternalLabel
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
@@ -112,6 +114,26 @@ val inlineCommentMediaPatch = bytecodePatch(
                     "invoke-static { v$view, v$text }, $INLINE_CLASS->bindCommentBody(Landroid/widget/TextView;Ljava/lang/CharSequence;)V",
                 )
             }
+        }
+
+        // endregion
+
+        // region Leave room under a picture that collapses the comment when tapped.
+
+        // Relay counts a touch anywhere on a picture's line, including below the picture, as
+        // a touch on it. v0 is a local the method writes before reading.
+        CommentTouchOnLinkFingerprint.method.apply {
+            addInstructionsWithLabels(
+                0,
+                """
+                    invoke-static { p0, p1 }, $INLINE_CLASS->touchBelowPicture(Landroid/widget/TextView;Landroid/view/MotionEvent;)Z
+                    move-result v0
+                    if-eqz v0, :link
+                    const/4 v0, 0x0
+                    return v0
+                """,
+                ExternalLabel("link", getInstruction(0)),
+            )
         }
 
         // endregion

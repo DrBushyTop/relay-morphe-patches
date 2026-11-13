@@ -89,3 +89,16 @@ internal object DataStoryUpdateFromJsonFingerprint : Fingerprint(
     parameters = listOf("Lorg/json/JSONObject;"),
     strings = listOf("selftext_html", "selftext"),
 )
+
+/**
+ * `ActiveTextView2#l(MotionEvent)`, the comment text's "is this touch on a link" check, called
+ * when a touch starts. It finds the line under the touch, then the link at that point on it.
+ */
+internal object CommentTouchOnLinkFingerprint : Fingerprint(
+    definingClass = "Lreddit/news/listings/common/views/ActiveTextView2;",
+    returnType = "Z",
+    parameters = listOf("Landroid/view/MotionEvent;"),
+    filters = listOf(
+        methodCall(definingClass = "Landroid/text/Layout;", name = "getOffsetForHorizontal"),
+    ),
+)

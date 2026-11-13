@@ -27,6 +27,12 @@ import java.lang.ref.WeakReference;
  */
 final class MediaSpan extends ReplacementSpan {
     private static final float MAX_HEIGHT_OF_SCREEN = 0.6f;
+    /**
+     * Room left under the picture, in dp. A tap there is not on the picture, so it reaches the
+     * comment (to collapse it) instead of opening the viewer.
+     */
+    static final int SPACE_BELOW_DP = 12;
+    static final int CORNER_RADIUS_DP = 6;
 
     final InlineCommentMedia.Media media;
     /** The post the comment is on, as {@code t3_<id>}, or null. */
@@ -39,6 +45,8 @@ final class MediaSpan extends ReplacementSpan {
     private boolean sizeFromFile;
     private int availableWidth;
     private WeakReference<TextView> host = new WeakReference<>(null);
+    /** Whether the last draw showed the picture itself, not a placeholder. */
+    private boolean pictureDrawn;
 
     private final Rect bounds = new Rect();
     private final RectF clip = new RectF();
@@ -67,7 +75,7 @@ final class MediaSpan extends ReplacementSpan {
         return null;
     }
 
-    private static int dp(float value) {
+    static int dp(float value) {
         return Math.round(value * Resources.getSystem().getDisplayMetrics().density);
     }
 
@@ -119,7 +127,7 @@ final class MediaSpan extends ReplacementSpan {
         if (fm != null) {
             fm.ascent = -size[1];
             fm.top = fm.ascent;
-            fm.descent = dp(4);
+            fm.descent = dp(SPACE_BELOW_DP);
             fm.bottom = fm.descent;
         }
         return size[0];
@@ -139,7 +147,8 @@ final class MediaSpan extends ReplacementSpan {
         int left = Math.round(x);
         bounds.set(left, y - size[1], left + size[0], y);
         clip.set(bounds);
-        float radius = dp(6);
+        float radius = dp(CORNER_RADIUS_DP);
+        pictureDrawn = false;
 
         if (hiddenAsNsfw()) {
             drawPlaceholder(canvas, paint, radius, "NSFW · tap to open");
@@ -181,6 +190,7 @@ final class MediaSpan extends ReplacementSpan {
         canvas.scale(size[0] / (float) Math.max(1, own.width()), size[1] / (float) Math.max(1, own.height()));
         drawable.draw(canvas);
         canvas.restoreToCount(save);
+        pictureDrawn = true;
 
         shown.drawnBy(this);
         if (drawable instanceof Animatable) {
@@ -188,6 +198,16 @@ final class MediaSpan extends ReplacementSpan {
             if (!animatable.isRunning()) animatable.start();
         }
         if (still && !InlineMediaSettings.animateGifs()) drawPlayBadge(canvas);
+    }
+
+    /** Whether the last draw showed the picture itself, not a placeholder. */
+    boolean pictureDrawn() {
+        return pictureDrawn;
+    }
+
+    /** The size the picture is drawn at, in pixels: width, then height. */
+    void drawnSize(int[] out) {
+        measure(out, false);
     }
 
     /** Nothing more will load for this picture. */

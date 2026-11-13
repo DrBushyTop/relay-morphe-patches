@@ -1,18 +1,23 @@
 package app.drbushytop.extension.relay.inline;
 
 import android.content.res.Resources;
+import android.graphics.RectF;
 import android.net.Uri;
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.URLSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -32,6 +37,8 @@ import java.util.WeakHashMap;
  *   viewer as before.</li>
  *   <li>{@link #bindCommentBody} just before the comment list puts that text in a view, so the
  *   pictures know how wide they may be and which view to redraw when they arrive.</li>
+ *   <li>{@link #touchBelowPicture} when a comment is touched, so the room under a picture
+ *   collapses the comment instead of opening the picture.</li>
  * </ol>
  */
 @SuppressWarnings("unused")
@@ -158,6 +165,71 @@ public final class InlineCommentMedia {
         } catch (Throwable t) {
             Log.e(TAG, "bindCommentBody", t);
         }
+    }
+
+    /**
+     * Hook: the start of Relay's check for whether a touch on a comment's text is on a link.
+     * Relay only asks which line was touched, so the room under a picture (and, when the
+     * picture ends the comment, everything below the text) counted as the picture.
+     *
+     * @return true when the touch is below a picture on its line: not on a link, so the touch
+     * goes to the comment.
+     */
+    public static boolean touchBelowPicture(TextView view, MotionEvent event) {
+        try {
+            if (view == null || event == null) return false;
+            CharSequence text = view.getText();
+            Layout layout = view.getLayout();
+            if (!(text instanceof Spanned) || layout == null || layout.getLineCount() == 0) return false;
+            Spanned spanned = (Spanned) text;
+            float y = event.getY() - view.getTotalPaddingTop() + view.getScrollY();
+            int last = layout.getLineCount() - 1;
+            int line = y >= layout.getLineBottom(last) ? last : layout.getLineForVertical((int) y);
+            int lineStart = layout.getLineStart(line);
+            int lineEnd = layout.getLineEnd(line);
+            for (MediaSpan span : spanned.getSpans(lineStart, lineEnd, MediaSpan.class)) {
+                int start = spanned.getSpanStart(span);
+                if (start >= lineStart && start < lineEnd) return y > layout.getLineBaseline(line);
+            }
+            return false;
+        } catch (Throwable t) {
+            Log.e(TAG, "touchBelowPicture", t);
+            return false;
+        }
+    }
+
+    /**
+     * Where {@code view} draws pictures (not placeholders), in the view's own coordinates, or
+     * null when it draws none. Their corners are rounded by {@link #pictureCornerRadius}.
+     */
+    public static List<RectF> pictureBounds(TextView view) {
+        CharSequence text = view.getText();
+        if (!(text instanceof Spanned)) return null;
+        Spanned spanned = (Spanned) text;
+        MediaSpan[] spans = spanned.getSpans(0, spanned.length(), MediaSpan.class);
+        if (spans.length == 0) return null;
+        Layout layout = view.getLayout();
+        if (layout == null) return null;
+        float dx = view.getTotalPaddingLeft() - view.getScrollX();
+        float dy = view.getTotalPaddingTop() - view.getScrollY();
+        int[] size = new int[2];
+        List<RectF> out = null;
+        for (MediaSpan span : spans) {
+            if (!span.pictureDrawn()) continue;
+            int start = spanned.getSpanStart(span);
+            if (start < 0) continue;
+            int line = layout.getLineForOffset(start);
+            float x = dx + layout.getPrimaryHorizontal(start);
+            float bottom = dy + layout.getLineBaseline(line);
+            span.drawnSize(size);
+            if (out == null) out = new ArrayList<>(spans.length);
+            out.add(new RectF(x, bottom - size[1], x + size[0], bottom));
+        }
+        return out;
+    }
+
+    public static float pictureCornerRadius() {
+        return MediaSpan.dp(MediaSpan.CORNER_RADIUS_DP);
     }
 
     /** Link text that is the address itself, or Relay's label for a Giphy picture. */

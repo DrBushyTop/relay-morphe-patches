@@ -15,6 +15,8 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   - Images load only for comments on screen, newest first, three at a time. Comments that scroll away
     before their turn are not loaded.
   - Pictures go through Relay's own image cache, so opening one full screen doesn't download it again.
+  - A strip of room under each picture works like the comment's text: tapping it collapses the comment
+    instead of opening the picture.
   - A GIF shows a small still of its first frame first. On Wi-Fi the animation then loads and plays;
     on mobile data or any metered network the still stays, with a play button, and tapping it opens the MP4.
   - In a post marked NSFW, pictures stay hidden behind a "tap to open" box unless Relay's own
@@ -33,8 +35,9 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   (about 30 mA) than dark grey does at that brightness. With this patch, Relay's **Night** theme looks the
   same as Night (OLED), but while the brightness setting is below 3% (auto-brightness in a dark room), its
   blacks fade to dark grey (51/255). Darker tones are lifted in proportion, so toolbars and cards stay apart,
-  and text and anything brighter than 102/255 is unchanged. Night (OLED) itself is not changed. Needs
-  Android 13 or later.
+  and text and anything brighter than 102/255 is unchanged. Pictures and videos (thumbnails, previews,
+  pictures in comments) keep their own blacks; toolbars and buttons over them turn grey with the rest.
+  Night (OLED) itself is not changed. Needs Android 13 or later.
 - **Fix GIF sound**: For some GIF hosts, Relay asks the host for the video only when its remote config
   says so. Patcheddit turns remote config off, so Relay played Reddit's own copy of the clip, which has no
   sound. It now loads the original, with sound when the clip has it (Relay's "Mute videos" setting still
