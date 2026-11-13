@@ -24,8 +24,9 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
     network.
   - The patch includes the viewer fix above.
 - **Prefer high refresh rate**: Relay never asks for a refresh rate, so on phones with an adaptive
-  refresh rate it stays at 60 Hz, scrolling included. Each Relay window now asks for the display's
-  highest refresh rate (120 Hz, 144 Hz, ...). It uses somewhat more battery while Relay is open.
+  refresh rate it stays at 60 Hz, scrolling included. While Relay is drawing (scrolling, flinging,
+  animating) it now asks for the display's highest refresh rate (120 Hz, 144 Hz, ...), and drops the
+  request 0.6 s after the screen goes still, so static content can run at a lower rate again.
 
 Supported: Relay for Reddit 10.2.40 (`free.reddit.news`, the version patcheddit requires) and Relay Pro
 10.2.40 (`reddit.news`). Only the free version is tested.

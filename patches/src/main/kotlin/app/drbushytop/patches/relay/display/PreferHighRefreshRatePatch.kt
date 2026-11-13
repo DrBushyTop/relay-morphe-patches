@@ -23,8 +23,9 @@ internal object RelayApplicationOnCreateFingerprint : Fingerprint(
 @Suppress("unused")
 val preferHighRefreshRatePatch = bytecodePatch(
     name = "Prefer high refresh rate",
-    description = "Asks for the display's highest refresh rate, so scrolling is not held at 60 Hz " +
-        "on adaptive refresh rate phones. Uses somewhat more battery while Relay is open.",
+    description = "Asks for the display's highest refresh rate while Relay is scrolling or animating, " +
+        "so scrolling is not held at 60 Hz on adaptive refresh rate phones. The request is dropped " +
+        "once the screen is still, so static content can run at a lower rate.",
     default = true,
 ) {
     compatibleWith(*Relay.compatibility)
