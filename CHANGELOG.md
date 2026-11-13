@@ -1,3 +1,9 @@
+## [1.2.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.1.0...v1.2.0-dev.1) (2026-11-13)
+
+### ✨ New Features
+
+* only ask for the high refresh rate while Relay is drawing ([e46e877](https://github.com/DrBushyTop/relay-morphe-patches/commit/e46e87752d049425c0314de089b1a2222f921ec5))
+
 ## [1.1.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.0.0...v1.1.0) (2026-11-13)
 
 ### ✨ New Features
