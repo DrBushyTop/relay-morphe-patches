@@ -1,4 +1,4 @@
-rootProject.name = "morphe-patches-template"
+rootProject.name = "relay-morphe-patches"
 
 pluginManagement {
     repositories {
@@ -18,4 +18,13 @@ pluginManagement {
 
 plugins {
     id("app.morphe.patches") version "2.1.0"
+}
+
+settings {
+    extensions {
+        defaultNamespace = "app.drbushytop.extension"
+
+        // Must be an absolute path, or extensions in subfolders cannot find it.
+        proguardFiles(rootProject.projectDir.resolve("extensions/proguard-rules.pro").toString())
+    }
 }

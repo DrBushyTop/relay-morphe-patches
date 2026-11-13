@@ -1,14 +1,13 @@
-group = "app.template"
+group = "app.drbushytop"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "DrBushyTop Relay Patches"
+        description = "Patches for Relay for Reddit, made to be used alongside Patcheddit"
+        source = "git@github.com:DrBushyTop/relay-morphe-patches.git"
+        author = "DrBushyTop"
+        contact = "https://github.com/DrBushyTop/relay-morphe-patches/issues"
+        website = "https://github.com/DrBushyTop/relay-morphe-patches"
         license = "GPLv3"
     }
 }
