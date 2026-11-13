@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-13T14:16:03",
-  "description": "## [1.1.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.0.0...v1.1.0) (2026-11-13)\n\n### ✨ New Features\n\n* prefer the display's highest refresh rate ([798631c](https://github.com/DrBushyTop/relay-morphe-patches/commit/798631cf63196578883bb17a0e066726585449c6))",
-  "download_url": "https://github.com/DrBushyTop/relay-morphe-patches/releases/download/v1.1.0/patches-1.1.0.mpp",
+  "created_at": "2026-11-13T14:21:17",
+  "description": "## [1.2.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.1.0...v1.2.0) (2026-11-13)\n\n### ✨ New Features\n\n* only ask for the high refresh rate while Relay is drawing ([e46e877](https://github.com/DrBushyTop/relay-morphe-patches/commit/e46e87752d049425c0314de089b1a2222f921ec5))",
+  "download_url": "https://github.com/DrBushyTop/relay-morphe-patches/releases/download/v1.2.0/patches-1.2.0.mpp",
   "signature_download_url": "",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "public_key": "L6q99dkI2NH59BTq6YYWEr53+KkD/TJcco2eg7AmZ80="
 }
