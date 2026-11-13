@@ -45,7 +45,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.2.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
+> **[v1.2.0](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
 <details open>
 <summary>📦 Relay for Reddit&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
 <br>
