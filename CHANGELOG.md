@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.3.0...v1.4.0) (2026-11-13)
+
+### ✨ New Features
+
+* Fix GIF sound ([fcfadbd](https://github.com/DrBushyTop/relay-morphe-patches/commit/fcfadbdf08723460be30cc1facbf4b1e1b219a20))
+
 ## [1.4.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.3.0...v1.4.0-dev.1) (2026-11-13)
 
 ### ✨ New Features
