@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.6.1...v1.6.2) (2026-11-13)
+
+### 🐛 Bug Fixes
+
+* Keep web pages in Relay's browser out of the dim-light grey ([c5ddc3b](https://github.com/DrBushyTop/relay-morphe-patches/commit/c5ddc3b2f9a122a5d7602ad0af899490135b0407))
+
 ## [1.6.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.6.0...v1.6.1) (2026-11-13)
 
 ### 🐛 Bug Fixes
