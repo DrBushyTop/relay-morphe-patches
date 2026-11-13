@@ -27,6 +27,14 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   refresh rate it stays at 60 Hz, scrolling included. While Relay is drawing (scrolling, flinging,
   animating) it now asks for the display's highest refresh rate (120 Hz, 144 Hz, ...), and drops the
   request 0.6 s after the screen goes still, so static content can run at a lower rate again.
+- **Night theme like OLED, grey in dim light** (off by default; for vivo phones): vivo's LTPO phones hold
+  the screen at 60 Hz in dim light while half of it or more is darker than 49/255, so a black theme is held
+  at 60 Hz exactly when the screen is dimmest. Measured on a vivo X300 Ultra, that costs more battery
+  (about 30 mA) than dark grey does at that brightness. With this patch, Relay's **Night** theme looks the
+  same as Night (OLED), but while the brightness setting is below 3% (auto-brightness in a dark room), its
+  blacks fade to dark grey (51/255). Darker tones are lifted in proportion, so toolbars and cards stay apart,
+  and text and anything brighter than 102/255 is unchanged. Night (OLED) itself is not changed. Needs
+  Android 13 or later.
 
 Supported: Relay for Reddit 10.2.40 (`free.reddit.news`, the version patcheddit requires) and Relay Pro
 10.2.40 (`reddit.news`). Only the free version is tested.
@@ -93,7 +101,8 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
   makes all releases and updates `patches-list.json`, `patches-bundle.json` and `CHANGELOG.md`; don't edit
   those by hand.
 - Releases are signed with the key in the `MORPHE_SIGNING_KEY` secret; `morphe-signing.pub` is its public half.
-- `adb shell setprop log.tag.RelayInlineMedia DEBUG` turns on the inline media patch's debug log.
+- `adb shell setprop log.tag.RelayInlineMedia DEBUG` turns on the inline media patch's debug log;
+  `RelayRefreshRate` and `RelayDimBlack` do the same for the refresh rate and black level patches.
 - The extension is shrunk to `app.drbushytop.**` only (see `extensions/proguard-rules.pro`). That keeps its
   classes from colliding with patcheddit's extension when both bundles are applied to one APK.
 
