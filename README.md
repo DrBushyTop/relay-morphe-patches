@@ -35,6 +35,10 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   blacks fade to dark grey (51/255). Darker tones are lifted in proportion, so toolbars and cards stay apart,
   and text and anything brighter than 102/255 is unchanged. Night (OLED) itself is not changed. Needs
   Android 13 or later.
+- **Fix GIF sound**: For some GIF hosts, Relay asks the host for the video only when its remote config
+  says so. Patcheddit turns remote config off, so Relay played Reddit's own copy of the clip, which has no
+  sound. It now loads the original, with sound when the clip has it. When the original has been removed,
+  Reddit's silent copy plays as before.
 
 Supported: Relay for Reddit 10.2.40 (`free.reddit.news`, the version patcheddit requires) and Relay Pro
 10.2.40 (`reddit.news`). Only the free version is tested.
