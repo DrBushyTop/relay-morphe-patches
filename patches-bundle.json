@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-13T20:23:25",
-  "description": "## [1.6.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.5.0...v1.6.0) (2026-11-13)\n\n### ✨ New Features\n\n* Reject ad consent without showing the consent form ([354da98](https://github.com/DrBushyTop/relay-morphe-patches/commit/354da98daf6d2fb1b1deadd9994007cb7b22affd))",
-  "download_url": "https://github.com/DrBushyTop/relay-morphe-patches/releases/download/v1.6.0/patches-1.6.0.mpp",
+  "created_at": "2026-11-13T22:53:49",
+  "description": "## [1.6.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.6.0...v1.6.1) (2026-11-13)\n\n### 🐛 Bug Fixes\n\n* Keep pictures' own blacks when Night turns grey, and leave tap room under comment pictures ([6f3cac1](https://github.com/DrBushyTop/relay-morphe-patches/commit/6f3cac1f2906f6a31fa2c5bff6fc0abff970c9b9))",
+  "download_url": "https://github.com/DrBushyTop/relay-morphe-patches/releases/download/v1.6.1/patches-1.6.1.mpp",
   "signature_download_url": "",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "public_key": "L6q99dkI2NH59BTq6YYWEr53+KkD/TJcco2eg7AmZ80="
 }

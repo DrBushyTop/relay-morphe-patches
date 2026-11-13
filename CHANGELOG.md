@@ -1,3 +1,9 @@
+## [1.6.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.6.0...v1.6.1) (2026-11-13)
+
+### 🐛 Bug Fixes
+
+* Keep pictures' own blacks when Night turns grey, and leave tap room under comment pictures ([6f3cac1](https://github.com/DrBushyTop/relay-morphe-patches/commit/6f3cac1f2906f6a31fa2c5bff6fc0abff970c9b9))
+
 ## [1.6.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.5.0...v1.6.0) (2026-11-13)
 
 ### ✨ New Features
