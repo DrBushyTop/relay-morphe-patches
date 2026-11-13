@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "patches": [
     {
       "name": "Fix GIF sound",
@@ -185,6 +185,51 @@
     {
       "name": "Prefer high refresh rate",
       "description": "Asks for the display's highest refresh rate while Relay is scrolling or animating, so scrolling is not held at 60 Hz on adaptive refresh rate phones. The request is dropped once the screen is still, so static content can run at a lower rate.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "free.reddit.news",
+          "name": "Relay for Reddit",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "packageName": "reddit.news",
+          "name": "Relay for Reddit Pro",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Reject ad consent",
+      "description": "Answers Relay's ad consent request (Google's cookie and personal data form) with \"reject all\" without showing it: no purposes, no vendors, no legitimate interest. An answer given before is replaced.",
       "default": true,
       "category": null,
       "compatiblePackages": [
