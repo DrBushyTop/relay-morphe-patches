@@ -43,6 +43,12 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   down), Reddit's silent copy plays as before.
 - **Fix video crashes**: Relay crashed on a post whose video has no URL (opening the post's More menu,
   for one), and when the video controls button was tapped before a video loaded.
+- **Reject ad consent**: Relay's free version asks for consent to ad cookies and personal data with
+  Google's consent form. The form now never shows, and Relay stores the answer "Reject all" gives: no
+  consent and no legitimate interest for any purpose, special feature or vendor (IAB list and Google's
+  other ad providers alike). Relay's ad networks read that answer, so only ads that need no consent
+  (non-personalised, without cookies for tracking) can load. Any answer given before, including from the
+  form in Relay's About screen, is replaced on each start.
 
 Supported: Relay for Reddit 10.2.40 (`free.reddit.news`, the version patcheddit requires) and Relay Pro
 10.2.40 (`reddit.news`). Only the free version is tested.
@@ -116,7 +122,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
   those by hand.
 - Releases are signed with the key in the `MORPHE_SIGNING_KEY` secret; `morphe-signing.pub` is its public half.
 - `adb shell setprop log.tag.RelayInlineMedia DEBUG` turns on the inline media patch's debug log;
-  `RelayRefreshRate` and `RelayDimBlack` do the same for the refresh rate and black level patches.
+  `RelayRefreshRate`, `RelayDimBlack`, `RelayGifSound` and `RelayAdConsent` do the same for the refresh rate, black level, GIF sound and ad consent patches.
 - The extension is shrunk to `app.drbushytop.**` only (see `extensions/proguard-rules.pro`). That keeps its
   classes from colliding with patcheddit's extension when both bundles are applied to one APK.
 
