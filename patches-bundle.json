@@ -1,7 +1,8 @@
 {
-  "created_at": "",
-  "description": "",
-  "download_url": "",
+  "created_at": "2026-11-13T13:40:57",
+  "description": "## 1.0.0-dev.1 (2026-11-13)\n\n### ✨ New Features\n\n* open Reddit image links in the image viewer ([191b9b2](https://github.com/DrBushyTop/relay-morphe-patches/commit/191b9b27fe492b200491fa82063d1b84d1008e04))\n* show comment images and GIFs inline ([e321e5b](https://github.com/DrBushyTop/relay-morphe-patches/commit/e321e5bc1ae7425f108d7015618d809455f3d42c))",
+  "download_url": "https://github.com/DrBushyTop/relay-morphe-patches/releases/download/v1.0.0-dev.1/patches-1.0.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": ""
+  "version": "1.0.0-dev.1",
+  "public_key": "L6q99dkI2NH59BTq6YYWEr53+KkD/TJcco2eg7AmZ80="
 }
