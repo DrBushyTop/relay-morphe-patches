@@ -1,3 +1,9 @@
+## [1.6.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.5.0...v1.6.0-dev.1) (2026-11-13)
+
+### ✨ New Features
+
+* Reject ad consent without showing the consent form ([354da98](https://github.com/DrBushyTop/relay-morphe-patches/commit/354da98daf6d2fb1b1deadd9994007cb7b22affd))
+
 ## [1.5.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.4.0...v1.5.0) (2026-11-13)
 
 ### ✨ New Features

@@ -67,9 +67,9 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.5.0](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.5.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;12 patches total
+> **[v1.6.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.6.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;14 patches total
 <details open>
-<summary>📦 Relay for Reddit&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
+<summary>📦 Relay for Reddit&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
 
 **Package name:** `free.reddit.news`
@@ -86,12 +86,13 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 | [Night theme like OLED, grey in dim light](#night-theme-like-oled-grey-in-dim-light) | Makes the Night theme look like Night (OLED), except at very low brightness, where its blacks turn dark grey. For vivo phones with an adaptive refresh rate: they hold a mostly black screen at 60 Hz in dim light, which uses more battery than the grey. Night (OLED) is not changed. |  |
 | [Open Reddit images in the image viewer](#open-reddit-images-in-the-image-viewer) | Opens i.redd.it and preview.redd.it images (.jpeg, .webp, ...) in Relay's image viewer. Relay only recognised .jpg and .png, so these went to the browser, which Reddit now redirects to the comment thread. Also plays Reddit's MP4 copies of GIFs in Relay's video player. |  |
 | [Prefer high refresh rate](#prefer-high-refresh-rate) | Asks for the display's highest refresh rate while Relay is scrolling or animating, so scrolling is not held at 60 Hz on adaptive refresh rate phones. The request is dropped once the screen is still, so static content can run at a lower rate. |  |
+| [Reject ad consent](#reject-ad-consent) | Answers Relay's ad consent request (Google's cookie and personal data form) with "reject all" without showing it: no purposes, no vendors, no legitimate interest. An answer given before is replaced. |  |
 | [Show comment images inline](#show-comment-images-inline) | Draws pictures and GIFs linked in a comment (Reddit uploads, Giphy, i.imgur) inside the comment instead of as a link. Tapping one opens it full screen as before. GIFs animate on Wi-Fi and show a still on mobile data. Follows Relay's NSFW Thumbnails setting. Can be turned off, or limited to Wi-Fi, in Settings > Behaviour > Comments. |  |
 
 </details>
 
 <details open>
-<summary>📦 Relay for Reddit Pro&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
+<summary>📦 Relay for Reddit Pro&nbsp;&nbsp;•&nbsp;&nbsp;7 patches</summary>
 <br>
 
 **Package name:** `reddit.news`
@@ -108,6 +109,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 | [Night theme like OLED, grey in dim light](#night-theme-like-oled-grey-in-dim-light) | Makes the Night theme look like Night (OLED), except at very low brightness, where its blacks turn dark grey. For vivo phones with an adaptive refresh rate: they hold a mostly black screen at 60 Hz in dim light, which uses more battery than the grey. Night (OLED) is not changed. |  |
 | [Open Reddit images in the image viewer](#open-reddit-images-in-the-image-viewer) | Opens i.redd.it and preview.redd.it images (.jpeg, .webp, ...) in Relay's image viewer. Relay only recognised .jpg and .png, so these went to the browser, which Reddit now redirects to the comment thread. Also plays Reddit's MP4 copies of GIFs in Relay's video player. |  |
 | [Prefer high refresh rate](#prefer-high-refresh-rate) | Asks for the display's highest refresh rate while Relay is scrolling or animating, so scrolling is not held at 60 Hz on adaptive refresh rate phones. The request is dropped once the screen is still, so static content can run at a lower rate. |  |
+| [Reject ad consent](#reject-ad-consent) | Answers Relay's ad consent request (Google's cookie and personal data form) with "reject all" without showing it: no purposes, no vendors, no legitimate interest. An answer given before is replaced. |  |
 | [Show comment images inline](#show-comment-images-inline) | Draws pictures and GIFs linked in a comment (Reddit uploads, Giphy, i.imgur) inside the comment instead of as a link. Tapping one opens it full screen as before. GIFs animate on Wi-Fi and show a still on mobile data. Follows Relay's NSFW Thumbnails setting. Can be turned off, or limited to Wi-Fi, in Settings > Behaviour > Comments. |  |
 
 </details>
