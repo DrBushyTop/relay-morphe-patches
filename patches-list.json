@@ -1,7 +1,52 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.3.0",
+  "version": "1.4.0-dev.1",
   "patches": [
+    {
+      "name": "Fix GIF sound",
+      "description": "Plays GIF videos from the site that hosts them, with sound, instead of Reddit's silent copy. When the original has been removed, Reddit's copy plays as before.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "free.reddit.news",
+          "name": "Relay for Reddit",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "packageName": "reddit.news",
+          "name": "Relay for Reddit Pro",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
     {
       "name": "Night theme like OLED, grey in dim light",
       "description": "Makes the Night theme look like Night (OLED), except at very low brightness, where its blacks turn dark grey. For vivo phones with an adaptive refresh rate: they hold a mostly black screen at 60 Hz in dim light, which uses more battery than the grey. Night (OLED) is not changed.",
