@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.4.0...v1.5.0) (2026-11-13)
+
+### ✨ New Features
+
+* Load Redgifs with the website's token, and fix video crashes ([14d4fa1](https://github.com/DrBushyTop/relay-morphe-patches/commit/14d4fa1034df03eb7791aae96a2365da968a9cd5))
+
 ## [1.5.0-dev.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.4.0...v1.5.0-dev.1) (2026-11-13)
 
 ### ✨ New Features
