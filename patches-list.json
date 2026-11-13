@@ -1,10 +1,55 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "patches": [
     {
       "name": "Open Reddit images in the image viewer",
       "description": "Opens i.redd.it and preview.redd.it images (.jpeg, .webp, ...) in Relay's image viewer. Relay only recognised .jpg and .png, so these went to the browser, which Reddit now redirects to the comment thread. Also plays Reddit's MP4 copies of GIFs in Relay's video player.",
+      "default": true,
+      "category": null,
+      "compatiblePackages": [
+        {
+          "packageName": "free.reddit.news",
+          "name": "Relay for Reddit",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        },
+        {
+          "packageName": "reddit.news",
+          "name": "Relay for Reddit Pro",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": "#2196F3",
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "10.2.40",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "name": "Prefer high refresh rate",
+      "description": "Asks for the display's highest refresh rate, so scrolling is not held at 60 Hz on adaptive refresh rate phones. Uses somewhat more battery while Relay is open.",
       "default": true,
       "category": null,
       "compatiblePackages": [

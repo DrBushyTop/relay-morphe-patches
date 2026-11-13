@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.0.0...v1.1.0) (2026-11-13)
+
+### ✨ New Features
+
+* prefer the display's highest refresh rate ([798631c](https://github.com/DrBushyTop/relay-morphe-patches/commit/798631cf63196578883bb17a0e066726585449c6))
+
 ## 1.0.0 (2026-11-13)
 
 ### ✨ New Features
