@@ -35,6 +35,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.view.ViewTreeObserver;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -61,9 +62,9 @@ import java.util.WeakHashMap;
  *
  * <p>The grey comes from a curve over the whole window: black becomes 51/255, darker tones are
  * lifted in proportion (so a dark toolbar stays apart from the background), and everything from
- * 102/255 up, text included, is left as it is. Pictures and videos (thumbnails, previews,
- * pictures in comments) are cut out of it, so they keep their own blacks; views drawn over them,
- * such as toolbars, are still lifted.
+ * 102/255 up, text included, is left as it is. Pictures, videos (thumbnails, previews,
+ * pictures in comments) and web pages in Relay's browser are cut out of it, so they keep their own
+ * blacks; views drawn over them, such as toolbars, are still lifted.
  */
 @SuppressWarnings("unused")
 public final class DimBlackLevel {
@@ -332,7 +333,8 @@ public final class DimBlackLevel {
             boolean picture = false;
             if (view instanceof ImageView) {
                 picture = imageView((ImageView) view, bounds, clip, outline, outlineRadius, self);
-            } else if (view instanceof TextureView) {
+            } else if (view instanceof TextureView || view instanceof WebView) {
+                // A video, or a web page in Relay's browser: both keep their own colours.
                 picture = addPicture(bounds, clip, view.getClipToOutline() ? radius(view) : 0f, self);
             } else if (!(view instanceof TextView) && !(view instanceof ViewGroup)) {
                 picture = customView(view, bounds, clip, self);
