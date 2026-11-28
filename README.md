@@ -50,6 +50,13 @@ Extra [Morphe](https://morphe.software) patches for Relay for Reddit, made to be
   down), Reddit's silent copy plays as before.
 - **Fix video crashes**: Relay crashed on a post whose video has no URL (opening the post's More menu,
   for one), and when the video controls button was tapped before a video loaded.
+- **Fix share links after login refresh**: Patcheddit's fix for share links (`reddit.com/r/.../s/...`) asks
+  Reddit where the link points, with Relay's login. But it is handed the token Relay renews its login with,
+  not the login itself, and Reddit blocks requests that send it. That token only reaches patcheddit once
+  Relay has renewed its login (it does so in the background), so share links worked after a fresh start and
+  then failed with "Failed to resolve" and opened in Relay's browser. Patcheddit's copy is now cleared each
+  time, so Reddit answers as it does right after a start, and share links open the post. Without
+  patcheddit's patch this does nothing.
 - **Restore random subreddits**: Reddit removed `r/random` and `r/randnsfw`, so Relay's **Random
   Subreddit** and **RandomNSFW Subreddit** menu items (in the Subreddits sheet's menu) showed an empty
   feed. They now pick a subreddit themselves and work as before: the feed switches to the subreddit picked,
