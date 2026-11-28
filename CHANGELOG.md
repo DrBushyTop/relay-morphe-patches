@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.7.1...v1.8.0) (2026-11-28)
+
+### ✨ New Features
+
+* Keep patcheddit's share link fix working after Relay renews its login ([cfa0636](https://github.com/DrBushyTop/relay-morphe-patches/commit/cfa063619ae2e58cdc9e4e5782532d2a7e3c4d2f))
+
 ## [1.7.1](https://github.com/DrBushyTop/relay-morphe-patches/compare/v1.7.0...v1.7.1) (2026-11-22)
 
 ### 🐛 Bug Fixes

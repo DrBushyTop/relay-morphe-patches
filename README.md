@@ -93,9 +93,9 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.7.1](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.7.1)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;16 patches total
+> **[v1.8.0](https://github.com/DrBushyTop/relay-morphe-patches/releases/tag/v1.8.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;18 patches total
 <details open>
-<summary>📦 Relay for Reddit&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
+<summary>📦 Relay for Reddit&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
 
 **Package name:** `free.reddit.news`
@@ -108,6 +108,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Fix GIF sound](#fix-gif-sound) | Plays GIF videos from the site that hosts them, with sound, instead of Reddit's silent copy. When the original can't be loaded, Reddit's copy plays as before. |  |
+| [Fix share links after login refresh](#fix-share-links-after-login-refresh) | Makes patcheddit's share link fix (reddit.com/r/.../s/...) keep working once Relay has renewed its login. Until now, links then failed with "Failed to resolve" and opened in the browser, because patcheddit sent Reddit the token Relay renews its login with, which Reddit blocks. Does nothing without patcheddit's patch. |  |
 | [Fix video crashes](#fix-video-crashes) | Stops Relay from crashing on a post whose video has no URL (when the post's More menu opens, for one) and when the video controls button is tapped before a video loads. |  |
 | [Night theme like OLED, grey in dim light](#night-theme-like-oled-grey-in-dim-light) | Makes the Night theme look like Night (OLED), except at very low brightness, where its blacks turn dark grey. For vivo phones with an adaptive refresh rate: they hold a mostly black screen at 60 Hz in dim light, which uses more battery than the grey. Night (OLED) is not changed. |  |
 | [Open Reddit images in the image viewer](#open-reddit-images-in-the-image-viewer) | Opens i.redd.it and preview.redd.it images (.jpeg, .webp, ...) in Relay's image viewer. Relay only recognised .jpg and .png, so these went to the browser, which Reddit now redirects to the comment thread. Also plays Reddit's MP4 copies of GIFs in Relay's video player. |  |
@@ -119,7 +120,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 </details>
 
 <details open>
-<summary>📦 Relay for Reddit Pro&nbsp;&nbsp;•&nbsp;&nbsp;8 patches</summary>
+<summary>📦 Relay for Reddit Pro&nbsp;&nbsp;•&nbsp;&nbsp;9 patches</summary>
 <br>
 
 **Package name:** `reddit.news`
@@ -132,6 +133,7 @@ Add both sources to Morphe Manager, then patch Relay with patcheddit's patches a
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
 | [Fix GIF sound](#fix-gif-sound) | Plays GIF videos from the site that hosts them, with sound, instead of Reddit's silent copy. When the original can't be loaded, Reddit's copy plays as before. |  |
+| [Fix share links after login refresh](#fix-share-links-after-login-refresh) | Makes patcheddit's share link fix (reddit.com/r/.../s/...) keep working once Relay has renewed its login. Until now, links then failed with "Failed to resolve" and opened in the browser, because patcheddit sent Reddit the token Relay renews its login with, which Reddit blocks. Does nothing without patcheddit's patch. |  |
 | [Fix video crashes](#fix-video-crashes) | Stops Relay from crashing on a post whose video has no URL (when the post's More menu opens, for one) and when the video controls button is tapped before a video loads. |  |
 | [Night theme like OLED, grey in dim light](#night-theme-like-oled-grey-in-dim-light) | Makes the Night theme look like Night (OLED), except at very low brightness, where its blacks turn dark grey. For vivo phones with an adaptive refresh rate: they hold a mostly black screen at 60 Hz in dim light, which uses more battery than the grey. Night (OLED) is not changed. |  |
 | [Open Reddit images in the image viewer](#open-reddit-images-in-the-image-viewer) | Opens i.redd.it and preview.redd.it images (.jpeg, .webp, ...) in Relay's image viewer. Relay only recognised .jpg and .png, so these went to the browser, which Reddit now redirects to the comment thread. Also plays Reddit's MP4 copies of GIFs in Relay's video player. |  |
